@@ -1,9 +1,10 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { RouterProvider } from 'react-router-dom';
 
-import App from './app/app';
 import { AppThemeProvider } from './theme';
+import { router } from './router';
 
 const queryClient = new QueryClient();
 
@@ -14,7 +15,7 @@ root.render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <AppThemeProvider>
-        <App />
+        <RouterProvider router={router} />
       </AppThemeProvider>
     </QueryClientProvider>
   </StrictMode>

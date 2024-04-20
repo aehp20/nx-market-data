@@ -52,11 +52,5 @@ export default function Ticker() {
   // data
   console.log('data: ', data);
 
-  return (
-    <ul>
-      {/* {data.map(todo => (
-        <li key={todo.id}>{todo.title}</li>
-      ))} */}
-    </ul>
-  );
+  return <Page title="Ticker">HOLA</Page>;
 }

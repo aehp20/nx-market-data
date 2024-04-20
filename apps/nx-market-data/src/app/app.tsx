@@ -1,12 +1,12 @@
-import { Page } from '../design-system';
-import Ticker from './ticker/Ticker';
+import { Outlet } from 'react-router-dom';
+import NavBar from '../design-system/navBar/NavBar';
+import { AppProvider } from './AppContext';
 
-export function App() {
+export default function App() {
   return (
-    <Page title="Market Data using Binance public REST API">
-      <Ticker />
-    </Page>
+    <AppProvider>
+      <NavBar />
+      <Outlet />
+    </AppProvider>
   );
 }
-
-export default App;

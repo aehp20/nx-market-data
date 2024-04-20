@@ -5,12 +5,12 @@ type TitleProps = {
   children: ReactNode;
 };
 
-const H1Wrapped = styled.h1`
+const TitleWrapped = styled.h2`
   color: #1a1a1d;
 `;
 
 export function Title(props: TitleProps) {
   const { children } = props;
 
-  return <H1Wrapped>{children}</H1Wrapped>;
+  return <TitleWrapped>{children}</TitleWrapped>;
 }
