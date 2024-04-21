@@ -1,48 +1,40 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
 import { useAppContext } from '../../app/AppContext';
-import {
-  MENU_CONTACT,
-  MENU_SETTINGS,
-  MENU_TICKER,
-  MENU_ABOUT,
-} from '../../app/constants';
+import { MENU } from './constants';
 import classNames from 'classnames';
+import { MENU_DISPLAY_TYPE } from './types';
 
-export default function NavBar() {
+export function NavBar() {
   const { selectedMenu, setSelectedMenu } = useAppContext();
+  const location = useLocation();
 
-  const menu = [
-    {
-      to: '/',
-      menuId: MENU_TICKER,
-      menuName: 'Ticker',
-    },
-    {
-      to: '/settings',
-      menuId: MENU_SETTINGS,
-      menuName: 'Settings',
-    },
-    {
-      to: '/contact',
-      menuId: MENU_CONTACT,
-      menuName: 'Contact',
-    },
-    {
-      to: '/about',
-      menuId: MENU_ABOUT,
-      menuName: 'About',
-    },
-  ];
+  const menu: MENU_DISPLAY_TYPE[] = [];
+  Object.getOwnPropertyNames(MENU).forEach((key) => {
+    menu.push({
+      to: MENU[key].pathname,
+      menuId: MENU[key].menuId,
+      menuName: MENU[key].menuName,
+    });
+  });
+
+  useEffect(() => {
+    if (selectedMenu !== location.pathname) {
+      setSelectedMenu(location.pathname);
+    }
+  }, [location.pathname, selectedMenu]);
 
   return (
     <Nav>
       <span>Market Data</span>
       {menu.map((item) => (
         <Link
-          onClick={() => setSelectedMenu(item.menuId)}
+          key={item.menuId}
+          onClick={() => setSelectedMenu(item.to)}
           to={item.to}
-          className={classNames(selectedMenu === item.menuId && 'active')}
+          className={classNames(selectedMenu === item.to && 'active')}
         >
           {item.menuName}
         </Link>

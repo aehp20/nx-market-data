@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useContext, useMemo, useState } from 'react';
-import { MENU_TICKER } from './constants';
+import { MENU } from '../design-system/navBar/constants';
 
 type AppProviderProps = {
   children: ReactNode;
@@ -15,7 +15,7 @@ export const AppContext = createContext({} as AppContextProps);
 export function AppProvider(props: AppProviderProps) {
   const { children } = props;
 
-  const [selectedMenu, setSelectedMenu] = useState(MENU_TICKER);
+  const [selectedMenu, setSelectedMenu] = useState(MENU.MENU_TICKER.pathname);
 
   const value = useMemo(
     () => ({

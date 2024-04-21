@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { useTitle } from 'react-use';
-import { Title } from '../title/Title';
+import { Title } from '../title';
 
 type PageProps = {
   children: ReactNode;
