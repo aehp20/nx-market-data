@@ -1,41 +1,25 @@
-import { useCallback, useState } from 'react';
+import styled from 'styled-components';
 
 import { Label, Page, Tab, Dropdown, Button } from '../../design-system';
-import { CurrencyPairOption, useTicker } from './hooks/useTicker';
+import { useI18NContext } from '../../i18n';
+import { useTicker } from './useTicker';
 import TickerInfo from './components/TickerInfo';
 import Ticker24h from './components/Ticker24h';
 import TickerRecentTrades from './components/TickerRecentTrades';
-import styled from 'styled-components';
-import { useI18NContext } from '../../i18n';
 
 export default function Ticker() {
   const { _ } = useI18NContext();
 
-  const { currencyPairOptions } = useTicker();
-
-  const [option, setOption] = useState<CurrencyPairOption | null>();
-  const [ticker, setTicker] = useState<string>();
-  const [selectedTab, setSelectedTab] = useState<number>(0);
-
-  const handleChange = useCallback(
-    (value: CurrencyPairOption) => {
-      setOption(value);
-    },
-    [setOption]
-  );
-
-  const handleSubmit = useCallback(() => {
-    option && setTicker(option.value);
-  }, [option, setTicker]);
-
-  const handleReset = useCallback(() => {
-    setOption(null);
-    setTicker(undefined);
-  }, [setOption, setTicker]);
-
-  const onTabSelected = (index: number) => {
-    setSelectedTab(index);
-  };
+  const {
+    option,
+    ticker,
+    currencyPairOptions,
+    selectedTab,
+    handleChange,
+    handleSubmit,
+    handleReset,
+    onTabSelected,
+  } = useTicker();
 
   return (
     <Page title={_('Ticker')}>

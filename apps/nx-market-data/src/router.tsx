@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
+
 import App from './app/App';
 import Ticker from './app/ticker/Ticker';
 import Contact from './app/contact/Contact';

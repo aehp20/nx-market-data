@@ -4,6 +4,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import { useMemo } from 'react';
+
 import { splitTextInCamelCase } from '../../../../utils/splitTextInCamelCase';
 import { Table } from '../../../../design-system';
 import { useI18NContext } from '../../../../i18n';

@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
+import classNames from 'classnames';
 
 import { useAppContext } from '../../app/AppContext';
-import classNames from 'classnames';
 import { MENU_DISPLAY_TYPE } from './types';
 import { MENU_TYPE } from './types';
 import { useI18NContext } from '../../i18n';
