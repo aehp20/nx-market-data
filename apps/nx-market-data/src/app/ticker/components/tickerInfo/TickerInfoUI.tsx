@@ -42,8 +42,6 @@ export default function TickerInfoUI(props: TickerInfoUIProps) {
     });
   });
 
-  console.log('dataTable: ', dataTable);
-
   const table = useReactTable({
     data: dataTable,
     columns,
