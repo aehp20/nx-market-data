@@ -1,39 +1,34 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
-import {
-  Label,
-  Page,
-  Spinner,
-  SpinnerContainer,
-  Tab,
-  Error,
-  Dropdown,
-} from '../../design-system';
-import { useTicker } from './hooks/useTicker';
+import { Label, Page, Tab, Dropdown, Button } from '../../design-system';
+import { CurrencyPairOption, useTicker } from './hooks/useTicker';
 import TickerInfo from './components/TickerInfo';
 import Ticker24h from './components/Ticker24h';
 import TickerRecentTrades from './components/TickerRecentTrades';
 import styled from 'styled-components';
 
 export default function Ticker() {
-  const { isLoading, error, data } = useTicker();
+  const { currencyPairOptions } = useTicker();
 
+  const [option, setOption] = useState<CurrencyPairOption | null>();
   const [ticker, setTicker] = useState<string>();
   const [selectedTab, setSelectedTab] = useState<number>(0);
 
-  if (isLoading)
-    return (
-      <SpinnerContainer>
-        <Spinner />
-      </SpinnerContainer>
-    );
+  const handleChange = useCallback(
+    (value: CurrencyPairOption) => {
+      setOption(value);
+    },
+    [setOption]
+  );
 
-  if (error) return <Error error={error} />;
+  const handleSubmit = useCallback(() => {
+    option && setTicker(option.value);
+  }, [option, setTicker]);
 
-  const options = data.map((item) => ({
-    value: item,
-    label: item,
-  }));
+  const handleReset = useCallback(() => {
+    setOption(null);
+    setTicker(undefined);
+  }, [setOption, setTicker]);
 
   const onTabSelected = (index: number) => {
     setSelectedTab(index);
@@ -41,15 +36,33 @@ export default function Ticker() {
 
   return (
     <Page title="Ticker">
-      <div style={{ width: '25%' }}>
-        <Label>Currency pair</Label>
-        <Dropdown
-          value={ticker ? { label: ticker, value: ticker } : undefined}
-          options={options}
-          onChange={(event?: { value: string }) => setTicker(event?.value)}
-          placeholder="Select a currency pair"
-        />
-      </div>
+      <form>
+        <FormContent>
+          <FormColumn>
+            <Label>Currency pair</Label>
+            <Dropdown
+              value={option}
+              options={currencyPairOptions}
+              onChange={handleChange}
+              placeholder="Select a currency pair"
+            />
+          </FormColumn>
+          <FormColumn
+            style={{
+              justifyItems: 'space-between',
+            }}
+          >
+            <ButtonsContainer>
+              <Button type="button" disabled={!option} onClick={handleSubmit}>
+                Submit
+              </Button>
+              <Button type="button" disabled={!option} onClick={handleReset}>
+                Reset
+              </Button>
+            </ButtonsContainer>
+          </FormColumn>
+        </FormContent>
+      </form>
       {ticker && (
         <>
           <br />
@@ -71,4 +84,22 @@ export default function Ticker() {
 const ContainerTabs = styled.div`
   background-color: #ff9a3c;
   padding: 8px;
+`;
+
+const FormContent = styled.div`
+  display: flex;
+  gap: 4px;
+`;
+
+const FormColumn = styled.div`
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  justify-items: space-between;
+  margin-top: auto;
+  gap: 2px;
 `;

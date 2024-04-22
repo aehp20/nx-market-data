@@ -1,41 +1,48 @@
-import Select from 'react-select';
+import Select, { StylesConfig } from 'react-select';
+
 import { useMemo } from 'react';
 
 export function Dropdown(props: any) {
-  const colourStyles = useMemo(() => {
+  const colorStyles: StylesConfig = useMemo(() => {
     return {
-      placeholder: (defaultStyles: any) => {
+      placeholder: (base: any) => {
         return {
-          ...defaultStyles,
+          ...base,
           color: '#333333',
         };
       },
-      control: (styles: any) => ({
-        ...styles,
+      control: (base: any) => ({
+        ...base,
         backgroundColor: '#ff9a3c',
         borderColor: '#333',
       }),
-      menuList: (styles: any) => ({
-        ...styles,
+      menuList: (base: any) => ({
+        ...base,
         background: '#ff9a3c',
       }),
-      option: (styles: any, { isFocused, isSelected }: any) => ({
-        ...styles,
-        background: '#ff9a3c',
-        // background: isFocused
-        //   ? 'hsla(291, 64%, 42%, 0.5)'
-        //   : isSelected
-        //   ? 'hsla(291, 64%, 42%, 1)'
-        //   : undefined,
-        // zIndex: 1,
+      option: (
+        base: any,
+        { isFocused, isSelected }: { isFocused: boolean; isSelected: boolean }
+      ) => ({
+        ...base,
+        background: isFocused ? '#ffc93c' : isSelected ? '#ffc93c' : '#ff9a3c',
+        color: '#333333',
+        fontWeight: isFocused ? 'bold' : isSelected ? 'bold' : 'normal',
       }),
       menu: (base: any) => ({
         ...base,
-        // zIndex: 100,
         background: '#ff9a3c',
+      }),
+      indicatorSeparator: (base: any) => ({
+        ...base,
+        background: '#333333',
+      }),
+      dropdownIndicator: (base: any) => ({
+        ...base,
+        color: '#333333',
       }),
     };
   }, []);
 
-  return <Select {...props} styles={colourStyles} />;
+  return <Select {...props} styles={colorStyles} />;
 }

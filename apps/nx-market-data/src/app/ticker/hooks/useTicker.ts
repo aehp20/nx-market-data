@@ -1,32 +1,21 @@
-import { useMemo } from 'react';
+import { SYMBOLS } from '../constants';
 
-import { useExchangeInfo } from '../../../hooks/useExchangeInfo';
-
-type ExchangeInfo = {
-  baseAsset: string;
-  symbol: string;
+export type CurrencyPairOption = {
+  value: string;
+  label: string;
 };
 
 export function useTicker() {
-  const {
-    isLoading: isLoadingExchangeInfo,
-    error: errorExchangeInfo,
-    data: dataExchangeInfo = {},
-  } = useExchangeInfo();
+  const currencyPairs = SYMBOLS.sort();
 
-  const currencyPairs: string[] = useMemo(() => [], []);
-  dataExchangeInfo.symbols?.forEach((item: ExchangeInfo) => {
-    currencyPairs.push(item.symbol);
-  });
-
-  const sortedDataByAssetName = useMemo(
-    () => currencyPairs.sort(),
-    [currencyPairs]
+  const currencyPairOptions: CurrencyPairOption[] = currencyPairs.map(
+    (item) => ({
+      value: item,
+      label: item,
+    })
   );
 
   return {
-    isLoading: isLoadingExchangeInfo,
-    error: errorExchangeInfo,
-    data: sortedDataByAssetName,
+    currencyPairOptions,
   };
 }

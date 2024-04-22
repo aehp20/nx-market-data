@@ -63,7 +63,10 @@ type TabItemWrappedProps = {
 const TabItemWrapped = styled.div<TabItemWrappedProps>`
   background-color: ${({ selected }) => (selected ? '#ff9a3c' : defaultColor)};
   width: 100%;
-  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   cursor: pointer;
   transition: 0.3s;
   border-bottom: ${({ selected }) => (selected ? '4px' : '1px')} solid #333;
