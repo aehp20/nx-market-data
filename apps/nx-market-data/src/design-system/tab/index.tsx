@@ -76,4 +76,6 @@ const TabItemWrapped = styled.div<TabItemWrappedProps>`
     ${({ selected }) => (selected ? selectedColor : defaultColor)};
   border-right: 1px solid
     ${({ selected }) => (selected ? selectedColor : defaultColor)};
+  border-top-left-radius: ${({ selected }) => (selected ? '4px' : '0px')};
+  border-top-right-radius: ${({ selected }) => (selected ? '4px' : '0px')};
 `;
