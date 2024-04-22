@@ -60,3 +60,19 @@ It will show tasks that you can run with Nx.
 - [Join the community](https://nx.dev/community)
 - [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
+
+## i18n
+Multiple files
+find /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app -type f \( -name '*.ts' -or -name '*.tsx' \)  -print > list
+xgettext --files-from=list -c -d translations -p locale --language=JavaScript --keyword=_ --keyword=_:1 --keyword=_n:1,2 --keyword=_c:1c,2 --keyword=_cn:1c,2,3
+mv locale/translations.po locale/translations.pot
+msginit -i locale/translations.pot --locale=en_EN -o locale/en.po
+msginit -i locale/translations.pot --locale=fr_FR -o locale/fr.po
+msginit -i locale/translations.pot --locale=es_ES -o locale/es.po
+msgmerge locale/en.po locale/translations.pot -o locale/en.po
+msgmerge locale/fr.po locale/translations.pot -o locale/fr.po
+msgmerge locale/es.po locale/translations.pot -o locale/es.po
+rm /Users/home/learn/github/nx-i18n/list
+
+Only one file
+xgettext apps/nx-market-data/src/app/ticker/Ticker.tsx -c -d translations -p locale --keyword=_ --keyword=_:1 --keyword=_n:1,2 --keyword=_c:1c,2 --keyword=_cn:1c,2,3 --language=JavaScript

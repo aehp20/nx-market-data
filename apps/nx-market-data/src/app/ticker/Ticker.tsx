@@ -6,8 +6,10 @@ import TickerInfo from './components/TickerInfo';
 import Ticker24h from './components/Ticker24h';
 import TickerRecentTrades from './components/TickerRecentTrades';
 import styled from 'styled-components';
+import { useI18NContext } from '../../i18n';
 
 export default function Ticker() {
+  const { _ } = useI18NContext();
   const { currencyPairOptions } = useTicker();
 
   const [option, setOption] = useState<CurrencyPairOption | null>();
@@ -44,7 +46,7 @@ export default function Ticker() {
               value={option}
               options={currencyPairOptions}
               onChange={handleChange}
-              placeholder="Select a currency pair"
+              placeholder={_('Select a currency pair')}
             />
           </FormColumn>
           <FormColumn
@@ -92,7 +94,7 @@ const FormContent = styled.div`
 `;
 
 const FormColumn = styled.div`
-  width: 25%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 `;

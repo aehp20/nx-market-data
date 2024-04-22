@@ -3,6 +3,7 @@ import App from './app/App';
 import Ticker from './app/ticker/Ticker';
 import Contact from './app/contact/Contact';
 import About from './app/about/About';
+import Settings from './app/settings/Settings';
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/settings',
+        element: <Settings />,
       },
     ],
   },

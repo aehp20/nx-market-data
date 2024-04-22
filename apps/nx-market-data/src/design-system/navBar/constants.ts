@@ -16,4 +16,9 @@ export const MENU: MENU_TYPE = {
     pathname: '/contact',
     menuName: 'Contact',
   },
+  MENU_SETTINGS: {
+    menuId: 'MENU_SETTINGS',
+    pathname: '/settings',
+    menuName: 'Settings',
+  },
 };
