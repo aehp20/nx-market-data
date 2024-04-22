@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 10:54+0400\n"
+"POT-Creation-Date: 2024-04-23 01:02+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,186 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/Ticker.tsx:49
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/settings/Settings.tsx:15
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/settings/Settings.tsx:21
+msgid "English"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/settings/Settings.tsx:25
+msgid "French"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/settings/Settings.tsx:29
+msgid "Spanish"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/settings/Settings.tsx:40
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/design-system/navBar/index.tsx:36
+msgid "Settings"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/settings/Settings.tsx:42
+msgid "Language"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/contact/Contact.tsx:8
+msgid "Aron Elias HERRERA PONTE"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/contact/Contact.tsx:11
+msgid ""
+"Lead developer with over 10 years' experience, specializing in frontend "
+"development with ReactJS: Web and Mobile."
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/contact/Contact.tsx:17
+msgid ""
+"As a senior developer my main objective is to design, develop and maintain "
+"web applications. Implement new web technologies that will make the product "
+"even more powerful. Find elegant solutions to usability problems. Build "
+"fast, intuitive and powerful user interfaces and experiences by solving "
+"complex underlying technical challenges."
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/contact/Contact.tsx:22
+msgid "Coordinates"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/contact/Contact.tsx:25
+msgid "Paris - France"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/contact/Contact.tsx:29
+msgid "Full LinkedIn profile"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/contact/Contact.tsx:45
+msgid "Social networks"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:8
+msgid "Flowdesk Online Assessment"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:11
+msgid ""
+"Retrieve and display market data for a selected pair from Binance public API."
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:15
+msgid "Specifications"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:20
+msgid ""
+"Users should be able to use a form to select the currency pair to query."
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:25
+msgid ""
+"Upon submitting the form, fetch public market data (ticker, 24h ticker, "
+"recent trades) for the selected pair from Binance public REST api."
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:30
+msgid "Users should be able to sort the trades data by time, price & quantity."
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:36
+msgid "Full documentation & endpoint list are available at"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:44
+msgid "Requirements"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:46
+msgid "Use React with Typescript"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:49
+msgid "You can use any styling solution (at Flowdesk we use styled components)"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:52
+msgid "You will have to publish your source code in a VCS"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/about/About.tsx:56
+msgid "Good luck!"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/Ticker.tsx:41
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/design-system/navBar/index.tsx:21
+msgid "Ticker"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/Ticker.tsx:45
+msgid "Currency pair"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/Ticker.tsx:50
 msgid "Select a currency pair"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/Ticker.tsx:60
+msgid "Submit"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/Ticker.tsx:63
+msgid "Reset"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/Ticker.tsx:73
+msgid "Ticker info"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/Ticker.tsx:73
+msgid "24h ticker"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/Ticker.tsx:73
+msgid "Recent trades"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/components/Ticker24h/Ticker24hUI.tsx:29
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/components/TickerInfo/TickerInfoUI.tsx:30
+msgid "Name"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/components/Ticker24h/Ticker24hUI.tsx:33
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/components/TickerInfo/TickerInfoUI.tsx:34
+msgid "Value"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/components/TickerRecentTrades/TickerRecentTradesUI.tsx:39
+msgid "Time"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/components/TickerRecentTrades/TickerRecentTradesUI.tsx:44
+msgid "Price"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/components/TickerRecentTrades/TickerRecentTradesUI.tsx:48
+msgid "Quantity"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/components/TickerRecentTrades/TickerRecentTradesUI.tsx:52
+msgid "Quote Qty"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/app/ticker/components/TickerRecentTrades/TickerRecentTradesUI.tsx:70
+msgid "To sort each column, simply click on the header."
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/design-system/navBar/index.tsx:26
+msgid "About"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/design-system/navBar/index.tsx:31
+msgid "Contact"
+msgstr ""
+
+#: /Users/home/learn/github/nx-market-data/apps/nx-market-data/src/design-system/navBar/index.tsx:57
+msgid "Market Data"
 msgstr ""

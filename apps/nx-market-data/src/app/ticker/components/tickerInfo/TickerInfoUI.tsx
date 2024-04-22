@@ -7,6 +7,7 @@ import {
 
 import { splitTextInCamelCase } from '../../../../utils/splitTextInCamelCase';
 import { Table } from '../../../../design-system';
+import { useI18NContext } from '../../../../i18n';
 
 type Property = {
   name: string;
@@ -15,21 +16,25 @@ type Property = {
 
 const columnHelper = createColumnHelper<Property>();
 
-const columns = [
-  columnHelper.accessor('name', {
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor('value', {
-    cell: (info) => info.getValue(),
-  }),
-];
-
 type TickerInfoUIProps = {
   data: { [key: string]: string | number };
 };
 
 export default function TickerInfoUI(props: TickerInfoUIProps) {
   const { data } = props;
+
+  const { _ } = useI18NContext();
+
+  const columns = [
+    columnHelper.accessor('name', {
+      header: () => _('Name'),
+      cell: (info) => info.getValue(),
+    }),
+    columnHelper.accessor('value', {
+      header: () => _('Value'),
+      cell: (info) => info.getValue(),
+    }),
+  ];
 
   const dataTable: { name: string; value: string | number }[] = useMemo(
     () => [],

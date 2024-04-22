@@ -10,6 +10,7 @@ import { useI18NContext } from '../../i18n';
 
 export default function Ticker() {
   const { _ } = useI18NContext();
+
   const { currencyPairOptions } = useTicker();
 
   const [option, setOption] = useState<CurrencyPairOption | null>();
@@ -37,11 +38,11 @@ export default function Ticker() {
   };
 
   return (
-    <Page title="Ticker">
+    <Page title={_('Ticker')}>
       <form>
         <FormContent>
           <FormColumn>
-            <Label>Currency pair</Label>
+            <Label>{_('Currency pair')}</Label>
             <Dropdown
               value={option}
               options={currencyPairOptions}
@@ -56,10 +57,10 @@ export default function Ticker() {
           >
             <ButtonsContainer>
               <Button type="button" disabled={!option} onClick={handleSubmit}>
-                Submit
+                {_('Submit')}
               </Button>
               <Button type="button" disabled={!option} onClick={handleReset}>
-                Reset
+                {_('Reset')}
               </Button>
             </ButtonsContainer>
           </FormColumn>
@@ -69,7 +70,7 @@ export default function Ticker() {
         <>
           <br />
           <Tab
-            items={['Ticker info', '24h ticker', 'Recent trades']}
+            items={[_('Ticker info'), _('24h ticker'), _('Recent trades')]}
             onTabSelected={onTabSelected}
           />
           <ContainerTabs>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Dropdown, Label, Page } from '../../design-system';
 import styled from 'styled-components';
 import { useI18NContext } from '../../i18n';
@@ -9,37 +9,47 @@ type Option = {
 };
 
 export default function Settings() {
-  const { _, setLocale } = useI18NContext();
+  const { _, locale, setLocale } = useI18NContext();
 
-  const [option, setOption] = useState<Option>({
-    label: 'English',
-    value: 'en',
-  });
+  const [option, setOption] = useState<Option>();
 
   const languageOptions: Option[] = [
     {
-      label: 'English',
+      label: _('English'),
       value: 'en',
     },
     {
-      label: 'French',
+      label: _('French'),
       value: 'fr',
     },
     {
-      label: 'Spanish',
+      label: _('Spanish'),
       value: 'es',
     },
   ];
 
   const handleChange = (option: Option) => {
-    setOption(option);
     setLocale(option.value);
   };
 
+  useEffect(() => {
+    if (locale) {
+      setOption({
+        label:
+          locale === 'en'
+            ? _('English')
+            : locale === 'es'
+            ? _('Spanish')
+            : _('French'),
+        value: locale,
+      });
+    }
+  }, [_, locale]);
+
   return (
-    <Page title="Settings">
+    <Page title={_('Settings')}>
       <LanguageContainer>
-        <Label>Language</Label>
+        <Label>{_('Language')}</Label>
         <Dropdown
           value={option}
           options={languageOptions}

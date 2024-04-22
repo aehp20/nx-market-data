@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "po2json": "node scripts/myPo2Json --locale=en",
+    "po2jsonEN": "node scripts/myPo2Json --locale=en",
     "po2jsonES": "node scripts/myPo2Json --locale=es",
     "po2jsonFR": "node scripts/myPo2Json --locale=fr"
   },

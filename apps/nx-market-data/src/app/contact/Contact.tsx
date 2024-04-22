@@ -1,30 +1,32 @@
 import { Link, Page } from '../../design-system';
+import { useI18NContext } from '../../i18n';
 
 export default function Contact() {
+  const { _ } = useI18NContext();
+
   return (
-    <Page title="Aron Elias HERRERA PONTE">
+    <Page title={_('Aron Elias HERRERA PONTE')}>
       <div>
-        Lead developer with over 10 years' experience, specializing in frontend
-        development with ReactJS: Web and Mobile.
+        {_(
+          "Lead developer with over 10 years' experience, specializing in frontend development with ReactJS: Web and Mobile."
+        )}
       </div>
       <br />
       <div>
-        As a senior developer my main objective is to design, develop and
-        maintain web applications. Implement new web technologies that will make
-        the product even more powerful. Find elegant solutions to usability
-        problems. Build fast, intuitive and powerful user interfaces and
-        experiences by solving complex underlying technical challenges.
+        {_(
+          'As a senior developer my main objective is to design, develop and maintain web applications. Implement new web technologies that will make the product even more powerful. Find elegant solutions to usability problems. Build fast, intuitive and powerful user interfaces and experiences by solving complex underlying technical challenges.'
+        )}
       </div>
       <br />
       <div>
-        Coordinates
+        {_('Coordinates')}
         <ul>
           <li>aronherrera2009@gmail.com</li>
-          <li>Paris - France</li>
+          <li>{_('Paris - France')}</li>
         </ul>
       </div>
       <br />
-      <div>Full LinkedIn profile</div>
+      <div>{_('Full LinkedIn profile')}</div>
 
       <ul>
         <li>
@@ -40,7 +42,7 @@ export default function Contact() {
 
       <br />
       <div>
-        Social networks
+        {_('Social networks')}
         <ul>
           <li>
             <Link

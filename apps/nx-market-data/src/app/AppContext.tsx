@@ -1,5 +1,4 @@
 import { ReactNode, createContext, useContext, useMemo, useState } from 'react';
-import { MENU } from '../design-system/navBar/constants';
 
 type AppProviderProps = {
   children: ReactNode;
@@ -15,7 +14,7 @@ export const AppContext = createContext({} as AppContextProps);
 export function AppProvider(props: AppProviderProps) {
   const { children } = props;
 
-  const [selectedMenu, setSelectedMenu] = useState(MENU.MENU_TICKER.pathname);
+  const [selectedMenu, setSelectedMenu] = useState('/contact');
 
   const value = useMemo(
     () => ({
