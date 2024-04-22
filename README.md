@@ -62,17 +62,45 @@ It will show tasks that you can run with Nx.
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
 
 ## i18n
-Multiple files
+Find all the typescript files and put them into the "list" file
+```
 find /Users/home/learn/github/nx-market-data/apps/nx-market-data/src -type f \( -name '*.ts' -or -name '*.tsx' \)  -print > list
+```
+
+Extract the translation words from the code
+```
 xgettext --files-from=list -c -d translations -p locale --language=JavaScript --from-code=utf-8 --keyword=_ --keyword=_:1 --keyword=_n:1,2 --keyword=_c:1c,2 --keyword=_cn:1c,2,3
+```
+
+Move the generated PO file to POT file
+```
 mv locale/translations.po locale/translations.pot
+```
+
+Creating the PO files translation by language
+```
 msginit -i locale/translations.pot --locale=en_EN -o locale/en.po
 msginit -i locale/translations.pot --locale=fr_FR -o locale/fr.po
 msginit -i locale/translations.pot --locale=es_ES -o locale/es.po
+```
+
+Updating the PO files translation by language
+```
 msgmerge locale/en.po locale/translations.pot -o locale/en.po
 msgmerge locale/fr.po locale/translations.pot -o locale/fr.po
 msgmerge locale/es.po locale/translations.pot -o locale/es.po
+```
+
+Manually updating the PO files translation by language
+
+Generate the JSON files translation by language
+```
 npm run po2jsonEN
 npm run po2jsonES
 npm run po2jsonFR
+```
+
+Finally, remove the "list" file
+```
 rm /Users/home/learn/github/nx-market-data/list
+```
